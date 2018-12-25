@@ -1,8 +1,6 @@
 package top.verly_badcw.activities;
 
 import android.content.SharedPreferences;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +8,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import top.verly_badcw.androidoj.R;
-import top.verly_badcw.fragment.SecondFragment;
+import top.verly_badcw.fragment.LoginFragment;
 
-public class MainActivity extends AppCompatActivity implements SecondFragment.OnMessageReadListener {
+public class MainActivity extends AppCompatActivity implements LoginFragment.OnMessageReadListener {
 
     public static final int SUCCESS = 1;
     public static final int FAIL = 0;
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
         FragmentTransaction f = fragmentManager.beginTransaction();
 
-        SecondFragment secondFragment = new SecondFragment();
+        LoginFragment secondFragment = new LoginFragment();
         f.add(R.id.container, secondFragment, null);
         f.commit();
 
