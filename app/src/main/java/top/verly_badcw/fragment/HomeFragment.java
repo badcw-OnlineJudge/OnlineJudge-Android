@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
                 MainActivity.fragmentManager
                         .beginTransaction()
                         .replace(R.id.container,
-                                    new FirstFragment(), null)
+                                    new ProblemListFragment(), null)
                         .addToBackStack(null)
                         .commit();
             }

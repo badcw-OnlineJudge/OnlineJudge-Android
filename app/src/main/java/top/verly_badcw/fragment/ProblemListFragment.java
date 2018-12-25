@@ -12,15 +12,13 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import top.verly_badcw.activities.MainActivity;
-import top.verly_badcw.activities.TestActivity;
 import top.verly_badcw.adapter.ListViewDemoAdapter;
 import top.verly_badcw.androidoj.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstFragment extends Fragment implements View.OnClickListener {
+public class ProblemListFragment extends Fragment implements View.OnClickListener {
 
     private ListView testLv;//ListView组件
     private Button updateDataBtn;//动态加载数据组件
@@ -28,7 +26,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
     private List<String> dataList = new ArrayList<>();//存储数据
     private ListViewDemoAdapter listViewDemoAdapter;//ListView的数据适配器
 
-    public FirstFragment() {
+    public ProblemListFragment() {
         // Required empty public constructor
     }
 
