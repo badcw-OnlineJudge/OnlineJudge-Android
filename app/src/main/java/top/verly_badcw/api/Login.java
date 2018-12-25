@@ -7,10 +7,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import okhttp3.*;
+import okhttp3.Call;
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
+import okhttp3.FormBody;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 import top.verly_badcw.activities.MainActivity;
 
 import static android.support.constraint.Constraints.TAG;
+import static top.verly_badcw.data.APIUrl.LOGIN_URL;
+import static top.verly_badcw.data.APIUrl.PROFILE_URL;
 
 public class Login {
 
@@ -18,12 +28,13 @@ public class Login {
     private static HashMap<HttpUrl, List<Cookie>> cookieStore = new HashMap<>();
 
     public static int loginnow(final String username, final String password) throws InterruptedException {
+
         mOkHttpClient = new OkHttpClient.Builder()
                 .cookieJar(new CookieJar() {
                     @Override
                     public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
                         cookieStore.put(url, cookies);
-                        cookieStore.put(HttpUrl.parse("http://verly-badcw.top:8020/api/profile"), cookies);
+                        cookieStore.put(HttpUrl.parse(PROFILE_URL), cookies);
                         for (Cookie cookie : cookies) {
                             Log.d(TAG, "cookie Name:" + cookie.name());
                             Log.d(TAG, "cookie Path:" + cookie.path());
@@ -32,7 +43,7 @@ public class Login {
 
                     @Override
                     public List<Cookie> loadForRequest(HttpUrl url) {
-                        List<Cookie> cookies = cookieStore.get(HttpUrl.parse("http://verly-badcw.top:8020/api/profile"));
+                        List<Cookie> cookies = cookieStore.get(HttpUrl.parse(PROFILE_URL));
                         if (cookies == null) {
                             Log.d(TAG, "loadForRequest: cookie empty");
                         }
@@ -42,7 +53,7 @@ public class Login {
                 .build();
 
         Request get = new Request.Builder()
-                .url("http://verly-badcw.top:8020/api/profile")
+                .url(PROFILE_URL)
                 .get()
                 .build();
         final Call call = mOkHttpClient.newCall(get);
@@ -56,10 +67,10 @@ public class Login {
                             .add("username", username)
                             .add("password", password)
                             .build();
-                    String csrf = cookieStore.get(HttpUrl.parse("http://verly-badcw.top:8020/api/profile")).get(0).value();
+                    String csrf = cookieStore.get(HttpUrl.parse(PROFILE_URL)).get(0).value();
                     Log.d(TAG, "run: " + csrf);
                     Request post = new Request.Builder()
-                            .url("http://verly-badcw.top:8020/api/Login")
+                            .url(LOGIN_URL)
                             .addHeader("Content-Type", "application/json")
                             .header("X-CSRFToken", csrf)
                             .post(postb)
