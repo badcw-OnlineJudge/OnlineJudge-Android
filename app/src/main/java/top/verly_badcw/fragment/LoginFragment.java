@@ -3,6 +3,7 @@ package top.verly_badcw.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,15 +13,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import top.verly_badcw.activities.MainActivity;
 import top.verly_badcw.androidoj.R;
-import top.verly_badcw.util.Login;
+import top.verly_badcw.api.login;
 
 import static android.support.constraint.Constraints.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
     private Button submit;
     private EditText usernameT;
@@ -28,7 +30,7 @@ public class SecondFragment extends Fragment {
     OnMessageReadListener messageReadListener;
 
 
-    public SecondFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
@@ -53,16 +55,32 @@ public class SecondFragment extends Fragment {
                 String password = passwordT.getText().toString();
 
                 Log.d(TAG, "onClick: " + username + " " + password);
+                try {
+                    login.loginnow(username, password);
+                } catch (InterruptedException e) {
+                    Log.d(TAG, "onClick: " + "login fail.");
+                }
 
-                if (Login.loginnow(username, password) == 1) {
+                Log.d("Second", "onClick: " + MainActivity.preferences.getInt("accept", 0) );
+
+                if (MainActivity.preferences.getInt("accept", 0) == 1) {
                     messageReadListener.onMessageRead(username);
+
+                    MainActivity.fragmentManager
+                            .beginTransaction()
+                            .replace(R.id.container,
+                                    new FirstFragment(), null)
+                            .addToBackStack(null)
+                            .commit();
+
+                } else {
+                    messageReadListener.onMessageRead("Fail to login");
                 }
             }
         });
 
         return view;
     }
-
 
     @Override
     public void onAttach(Context context) {
