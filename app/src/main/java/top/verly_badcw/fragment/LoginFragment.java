@@ -3,7 +3,6 @@ package top.verly_badcw.fragment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,7 +14,7 @@ import android.widget.EditText;
 
 import top.verly_badcw.activities.MainActivity;
 import top.verly_badcw.androidoj.R;
-import top.verly_badcw.api.login;
+import top.verly_badcw.api.Login;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -56,9 +55,9 @@ public class LoginFragment extends Fragment {
 
                 Log.d(TAG, "onClick: " + username + " " + password);
                 try {
-                    login.loginnow(username, password);
+                    Login.loginnow(username, password);
                 } catch (InterruptedException e) {
-                    Log.d(TAG, "onClick: " + "login fail.");
+                    Log.d(TAG, "onClick: " + "Login fail.");
                 }
 
                 Log.d("Second", "onClick: " + MainActivity.preferences.getInt("accept", 0) );
@@ -74,7 +73,7 @@ public class LoginFragment extends Fragment {
                             .commit();
 
                 } else {
-                    messageReadListener.onMessageRead("Fail to login");
+                    messageReadListener.onMessageRead("Fail to Login");
                 }
             }
         });

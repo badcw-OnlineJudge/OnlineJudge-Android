@@ -1,4 +1,4 @@
 package top.verly_badcw.api;
 
-public class submissions {
+public class Submissions {
 }

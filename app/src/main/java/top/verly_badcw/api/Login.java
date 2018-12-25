@@ -12,7 +12,7 @@ import top.verly_badcw.activities.MainActivity;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class login {
+public class Login {
 
     private static OkHttpClient mOkHttpClient;
     private static HashMap<HttpUrl, List<Cookie>> cookieStore = new HashMap<>();
@@ -59,7 +59,7 @@ public class login {
                     String csrf = cookieStore.get(HttpUrl.parse("http://verly-badcw.top:8020/api/profile")).get(0).value();
                     Log.d(TAG, "run: " + csrf);
                     Request post = new Request.Builder()
-                            .url("http://verly-badcw.top:8020/api/login")
+                            .url("http://verly-badcw.top:8020/api/Login")
                             .addHeader("Content-Type", "application/json")
                             .header("X-CSRFToken", csrf)
                             .post(postb)
