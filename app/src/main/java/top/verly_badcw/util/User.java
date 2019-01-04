@@ -1,57 +1,90 @@
 package top.verly_badcw.util;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import top.verly_badcw.api.Login;
+
 public class User {
-    private static String username;
-    private static int loginCode;
-    private static int permission;
-    private static List<Integer> solvedProblems = new ArrayList<>();
-    private static int rank;
+    private String userName;
+    private String passWord;
+    private String realName;
+    private String photoInfo;
+    private List<Integer> solvedProblems;
+    private int rank;
 
+    /*
+    * 0: Regular
+    * 1: Admin
+    * 2: SuperAdmin
+    * */
+    private int userType;
 
-    public static void initInfo() {
-        ;
+    private int getInfo() {
+        return Login.login();
     }
 
-    public static String getUsername() {
-        return username;
+    public int refresh() {
+        if (userName == null || passWord == null
+                || userName.equals("") || passWord.equals("")) {
+            return -1;
+        }
+        int statusCode = getInfo();
+        return statusCode;
     }
 
-    public static void setUsername(String username) {
-        User.username = username;
+    public String getUserName() {
+        return userName;
     }
 
-    public static int getLoginCode() {
-        return loginCode;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public static void setLoginCode(int loginCode) {
-        User.loginCode = loginCode;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public static int getPermission() {
-        return permission;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
-    public static void setPermission(int permission) {
-        User.permission = permission;
+    public String getRealName() {
+        return realName;
     }
 
-    public static List<Integer> getSolvedProblems() {
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
+    public String getPhotoInfo() {
+        return photoInfo;
+    }
+
+    public void setPhotoInfo(String photoInfo) {
+        this.photoInfo = photoInfo;
+    }
+
+    public List<Integer> getSolvedProblems() {
         return solvedProblems;
     }
 
-    public static void setSolvedProblems(List<Integer> solvedProblems) {
-        User.solvedProblems = solvedProblems;
+    public void setSolvedProblems(List<Integer> solvedProblems) {
+        this.solvedProblems = solvedProblems;
     }
 
-    public static int getRank() {
+    public int getRank() {
         return rank;
     }
 
-    public static void setRank(int rank) {
-        User.rank = rank;
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 }
