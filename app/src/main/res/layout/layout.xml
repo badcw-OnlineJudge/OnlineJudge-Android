@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            app:title="hello"
+
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/ic_launcher_foreground"
+                android:transitionName="mu"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:navigationIcon="@drawable/ic_editor"
+                app:collapseIcon="@drawable/ic_ac"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+            app:showDividers="middle"
+            >
+            <!--<android.support.v7.widget.Toolbar-->
+            <!--app:layout_collapseMode="pin"-->
+            <!--app:navigationIcon="@drawable/sl_go_back"-->
+            <!--android:background="@color/theme_color"-->
+            <!--app:titleTextColor="@color/material_white_normal"-->
+            <!--android:titleTextColor="@color/material_white_normal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--&gt;-->
+
+            <!--</android.support.v7.widget.Toolbar>-->
+            <android.support.v7.widget.LinearLayoutCompat
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="帐号"/>
+
+                <TextView
+                    android:id="@+id/tv_account"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="电话"/>
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="邮箱"/>
+
+                <TextView
+                    android:id="@+id/tv_mail"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="昵称"/>
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="性别"/>
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="生日"/>
+
+                <TextView
+                    android:id="@+id/tv_birth"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="擅长"/>
+
+                <TextView
+                    android:id="@+id/tv_occuption"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="学校"/>
+
+                <TextView
+                    android:id="@+id/tv_school"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="公司"/>
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/profile_layout_style"
+                >
+
+                <TextView
+                    style="@style/profile_text_info_style"
+                    android:text="个人说明"/>
+
+                <TextView
+                    android:id="@+id/tv_caption"
+                    style="@style/profile_text_edit_style"
+                    android:text="15948544852"/>
+            </LinearLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
