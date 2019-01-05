@@ -2,7 +2,7 @@ package top.verly_badcw.util;
 
 import java.util.List;
 
-import top.verly_badcw.api.Login;
+import top.verly_badcw.api.function.Login;
 
 public class User {
     private String userName;

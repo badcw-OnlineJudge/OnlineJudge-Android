@@ -1,4 +1,4 @@
-package top.verly_badcw.api;
+package top.verly_badcw.api.function;
 
 public class Login {
     public static int login() {
