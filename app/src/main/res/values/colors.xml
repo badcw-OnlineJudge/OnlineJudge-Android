@@ -12,6 +12,9 @@
     <color name="toolbarTitle">#FFA28C</color>
     <color name="toolbarTitleDark">#D67E71</color>
 
+    <color name="itemBackGround">#C4C1C4</color>
+    <color name="line_gray">#BD7D6D</color>
+
     <!--<color name="guillotine_background">#444153</color>-->
     <!--<color name="guillotine_background_dark">#383547</color>-->
 
