@@ -27,7 +27,7 @@ public class TableFragmentAdpter extends FragmentPagerAdapter {
         if (i == 0) return UserInfoFragment.newInstance(MainActivity.user);
 
         // problemlist
-        return ProblemListFragment.newInstance(list.get(i));
+        return ProblemListFragment.newInstance();
     }
 
     @Override
