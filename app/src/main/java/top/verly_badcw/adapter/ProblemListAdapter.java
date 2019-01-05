@@ -8,18 +8,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import top.verly_badcw.androidoj.R;
+import top.verly_badcw.util.ProblemInfo;
+import top.verly_badcw.util.ProblemList;
 
 public class ProblemListAdapter extends RecyclerView.Adapter<ProblemListAdapter.ViewHolder> {
 
     private Context context;
-    private List<String> list;
+    private List<ProblemInfo> list;
 
-    public ProblemListAdapter(Context context, List<String> list) {
+    public ProblemListAdapter(Context context) {
         this.context = context;
-        this.list = list;
+        if (this.list == null) {
+            this.list = new ArrayList<>();
+        }
+    }
+
+    public void addAll(Collection<? extends ProblemInfo> list) {
+        this.list.addAll(list);
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -31,7 +42,7 @@ public class ProblemListAdapter extends RecyclerView.Adapter<ProblemListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.item.setText(list.get(i));
+        viewHolder.item.setText(list.get(i).getTitle());
     }
 
     @Override
