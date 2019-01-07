@@ -2,6 +2,9 @@
 *.apk
 *.ap_
 
+# designPack
+designPack/
+
 # Files for the ART/Dalvik VM
 *.dex
 
