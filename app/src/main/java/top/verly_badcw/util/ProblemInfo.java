@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import static top.verly_badcw.InJavaResources.INTNULL;
+
 public class ProblemInfo {
     @SerializedName("id")
     private int id;
@@ -59,6 +61,10 @@ public class ProblemInfo {
     private String contest;
     @SerializedName("my_status")
     private int my_status;
+
+    public ProblemInfo() {
+        my_status = INTNULL;
+    }
 
     public int getId() {
         return id;

@@ -12,21 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import top.verly_badcw.activities.MainActivity;
-import top.verly_badcw.activities.Preference;
 import top.verly_badcw.adapter.ProblemListAdapter;
 import top.verly_badcw.androidoj.R;
 import top.verly_badcw.api.API;
-import top.verly_badcw.data.APIUrl;
-import top.verly_badcw.util.ProblemInfo;
+import top.verly_badcw.InJavaResources;
 import top.verly_badcw.util.ProblemList;
 import top.verly_badcw.util.RecycleViewDivider;
 
@@ -63,9 +57,9 @@ public class ProblemListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView problemListRecycler = view.findViewById(R.id.problem_list_recycler);
         problemListRecycler.addItemDecoration(new RecycleViewDivider(
-                getActivity(), LinearLayoutManager.VERTICAL, 10, getResources().getColor(R.color.line_gray)));
+                getActivity(), LinearLayoutManager.VERTICAL, 1, getResources().getColor(R.color.line_gray)));
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(APIUrl.HOST_NAME)
+                .baseUrl(InJavaResources.HOST_NAME)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         API api = retrofit.create(API.class);

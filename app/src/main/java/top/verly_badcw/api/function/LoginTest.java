@@ -1,27 +1,5 @@
 package top.verly_badcw.api.function;
 
-import android.util.Log;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Cookie;
-import okhttp3.CookieJar;
-import okhttp3.FormBody;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import top.verly_badcw.activities.MainActivity;
-
-import static android.support.constraint.Constraints.TAG;
-import static top.verly_badcw.data.APIUrl.LOGIN_URL;
-import static top.verly_badcw.data.APIUrl.PROFILE_URL;
-
 public class LoginTest {
 
 //    private static OkHttpClient mOkHttpClient;

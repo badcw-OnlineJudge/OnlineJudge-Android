@@ -7,13 +7,16 @@
     <color name="colorMainActivity">#90A6A6</color>
 
     <color name="acColor">#00FF00</color>
-    <color name="waColor">#FF0000</color>
+    <color name="waColor">#f14b0f</color>
+    <color name="problem_id">#dc3a3a</color>
 
-    <color name="toolbarTitle">#FFA28C</color>
-    <color name="toolbarTitleDark">#D67E71</color>
+    <color name="toolbarTitle">#FA7298</color>
+    <color name="toolbarTitleDark">#FA7298</color>
 
-    <color name="itemBackGround">#C4C1C4</color>
+    <color name="itemBackGround">#ece9ec</color>
+    <color name="problem_submitted">#bebabe</color>
     <color name="line_gray">#BD7D6D</color>
+    <color name="black">#000</color>
 
     <!--<color name="guillotine_background">#444153</color>-->
     <!--<color name="guillotine_background_dark">#383547</color>-->

@@ -2,12 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/itemBackGround" >
+    android:background="@color/itemBackGround"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_faq"
+        android:id="@+id/problem_solved" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="0000000"
+        android:gravity="center"
+        android:textColor="@color/problem_id"
+        android:id="@+id/problem_id" />
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textSize="15sp"
+        android:textColor="@color/black"
         android:id="@+id/problem_list_item"/>
+
+    <TextView
+        android:id="@+id/problem_status_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="000000"
+        android:gravity="end"
+        android:textColor="@color/line_gray"
+        android:textSize="15sp" />
 
 </LinearLayout>
